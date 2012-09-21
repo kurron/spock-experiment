@@ -1,5 +1,15 @@
 apply plugin: 'groovy'
 
+defaultTasks 'clean', 'build'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    groovy group: 'org.codehaus.groovy', name: 'groovy', version: '2.0.3'
+}
+
 task generateWrapper(type: Wrapper) {
     gradleVersion = '1.2'
 }
