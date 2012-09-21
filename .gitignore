@@ -4,3 +4,10 @@
 *.jar
 *.war
 *.ear
+
+# Gradle directories
+.gradle/*
+build/*
+
+# IntelliJ files
+.idea/workspace.xml
