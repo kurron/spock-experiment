@@ -7,7 +7,10 @@ repositories {
 }
 
 dependencies {
-    groovy group: 'org.codehaus.groovy', name: 'groovy', version: '2.0.3'
+    groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.8.7'
+    testCompile module('org.spockframework:spock-core:0.6-groovy-1.8')
+    testCompile module('org.spockframework:spock-spring:0.6-groovy-1.8')
+    testCompile module('org.spockframework:spock-unitils:0.6-groovy-1.8')
 }
 
 task generateWrapper(type: Wrapper) {
