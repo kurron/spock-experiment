@@ -9,7 +9,25 @@ repositories {
 dependencies {
     // mandatory dependencies for using Spock
     groovy "org.codehaus.groovy:groovy-all:${groovyVersion}"
+    compile "org.springframework:spring-aop:${springFrameworkVersion}"
+    compile "org.springframework:spring-asm:${springFrameworkVersion}"
+    compile "org.springframework:spring-aspects:${springFrameworkVersion}"
+    compile "org.springframework:spring-beans:${springFrameworkVersion}"
+    compile "org.springframework:spring-context:${springFrameworkVersion}"
+    compile "org.springframework:spring-context-support:${springFrameworkVersion}"
+    compile "org.springframework:spring-core:${springFrameworkVersion}"
+    compile "org.springframework:spring-expression:${springFrameworkVersion}"
+    compile "org.springframework:spring-instrument:${springFrameworkVersion}"
+    compile "org.springframework:spring-jdbc:${springFrameworkVersion}"
+    compile "org.springframework:spring-orm:${springFrameworkVersion}"
+    compile "org.springframework:spring-oxm:${springFrameworkVersion}"
+    compile "org.springframework:spring-tx:${springFrameworkVersion}"
+    compile "org.springframework:spring-web:${springFrameworkVersion}"
+    compile "org.springframework:spring-webmvc:${springFrameworkVersion}"
+
     testCompile "org.spockframework:spock-core:${spockVersion}"
+    testCompile "org.springframework:spring-test:${springFrameworkVersion}"
+
 
     // optional dependencies for using Spock
     testCompile "org.hamcrest:hamcrest-core:${hamcrestVersion}" // only necessary if Hamcrest matchers are used
