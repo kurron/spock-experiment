@@ -24,13 +24,19 @@ dependencies {
     compile "org.springframework:spring-tx:${springFrameworkVersion}"
     compile "org.springframework:spring-web:${springFrameworkVersion}"
     compile "org.springframework:spring-webmvc:${springFrameworkVersion}"
+    compile "org.slf4j:slf4j-api:${slf4jVersion}"
+    compile "org.slf4j:slf4j-ext:${slf4jVersion}"
 
     testCompile "org.spockframework:spock-core:${spockVersion}"
     testCompile "org.springframework:spring-test:${springFrameworkVersion}"
-
-
-    // optional dependencies for using Spock
     testCompile "org.hamcrest:hamcrest-core:${hamcrestVersion}" // only necessary if Hamcrest matchers are used
+
+    runtime "org.slf4j:jcl-over-slf4j:${slf4jVersion}"
+    runtime "org.slf4j:jul-to-slf4j:${slf4jVersion}"
+    runtime "org.slf4j:log4j-over-slf4j:${slf4jVersion}"
+    runtime "ch.qos.logback:logback-classic:${logbackVersion}"
+    runtime "ch.qos.logback:logback-core:${logbackVersion}"
+
     testRuntime "cglib:cglib-nodep:${cglibVersion}"          // allows mocking of classes (in addition to interfaces)
     testRuntime "org.objenesis:objenesis:${objenesisVersion}"    // allows mocking of classes without default constructor (together with CGLIB)
 }
