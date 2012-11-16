@@ -17,8 +17,15 @@
 package org.kurron.logan;
 
 import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests;
+
+import static org.hamcrest.core.Is.is;
+import static org.hamcrest.core.IsEqual.equalTo;
+import static org.hamcrest.core.IsNull.notNullValue;
+import static org.junit.Assert.assertThat;
+
 
 /**
  * An example of a simple Spring-based integration test.
@@ -26,9 +33,17 @@ import org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests;
 @ContextConfiguration
 public class SpringIntegrationTest extends AbstractJUnit4SpringContextTests
 {
+    @Autowired
+    private Logan sut;
+
     @Test
     public void given_when_then() throws Exception
     {
         System.out.println( "Test called!" );
+        assertThat( sut, is( notNullValue() ) );
+
+        final String results = sut.time();
+        assertThat( results, is( notNullValue() ) );
+        assertThat( results, is( equalTo( "bob" ) ) );
     }
 }
